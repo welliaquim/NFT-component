@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hsl(217, 54%, 11%);
+}
+
+.container {
+  background: hsl(216, 50%, 16%);
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1.4rem;
+  position: relative;
+}
+
+.mainimg {
+  z-index: 1;
+  width: 100%;
+  border-radius: 0.6rem;
+  position: relative;
+  display: inline-block;
+}
+
+.mainimg:hover {
+  background-color: hsl(178, 100%, 50%);
+  cursor: pointer;
+  background-image: url(./images/icon-view.svg);
+  opacity: 1.0;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -260%);
+  opacity: 0.1;
+  border-radius: 1rem;
+  background-color: hsl(178, 100%, 50%);
+}
+
+.icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: hsl(178, 100%, 50%);
+}
+
+.background:hover {
+  opacity: 1;
+}
+
+.title {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  display: grid;
+  padding: 1.2rem 0px;
+}
+
+.paragraph,
+.time,
+.creator {
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+}
+
+.paragraph {
+  padding-bottom: 1.2rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1.2rem;
+}
+
+.eth {
+  color: hsl(178, 100%, 50%);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.line {
+  border-bottom: 1px groove hsl(215, 32%, 27%);
+  width: 100%;
+}
+
+.creator {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 400;
+}
+
+.creator img {
+  max-width: 12%;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+
+.creatorname {
+  color: white;
+}
+
+.title:hover,
+.creatorname:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
