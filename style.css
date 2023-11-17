@@ -15,7 +15,7 @@ body {
 
 .container {
   background: hsl(216, 50%, 16%);
-  width: 20rem;
+  width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,47 +23,30 @@ body {
   border-radius: 1rem;
   padding: 1.4rem;
   position: relative;
+  box-shadow: 3px 17px 12px 14px rgba(0, 0, 0, 0.2);
+} /* Até aqui apenas estilização do container */
+
+.firstimg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainimg {
-  z-index: 1;
   width: 100%;
-  border-radius: 0.6rem;
   position: relative;
-  display: inline-block;
-}
-
-.mainimg:hover {
-  background-color: hsl(178, 100%, 50%);
-  cursor: pointer;
-  background-image: url(./images/icon-view.svg);
-  opacity: 1.0;
+  transition: opacity 0.3s ease;
 }
 
 .icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -260%);
-  opacity: 0.1;
+  opacity: 0;
   border-radius: 1rem;
-  background-color: hsl(178, 100%, 50%);
-}
-
-.icon:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.background {
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  background-color: hsl(178, 100%, 50%);
-}
-
-.background:hover {
-  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.2s;
 }
 
 .title {
@@ -130,13 +113,37 @@ body {
   color: white;
 }
 
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
+/* Espaço separado para hover */
+
+/* Este primeiro altera apenas os textos escritos 
+para que fiquem conforme exigido no projeto */
 .title:hover,
 .creatorname:hover {
   cursor: pointer;
   color: hsl(178, 100%, 50%);
 }
 
-.attribution {
+/* Selecionamos a div firstimg que é o pai dos outros
+elementos, através dela fazemos o EFEITO hover, ativando
+a cor do background e mudando a opacidade, mostrando assim
+o icone esperado de acordo com o projeto */
+
+.firstimg::before {
+  content:"";
   position: absolute;
-  bottom: 0;
+  inset: 0;
+  z-index: 1;
+}
+
+.firstimg:hover::before {
+  background-color: cyan;
+  opacity: 0.5;
+}
+
+.firstimg:hover .icon {
+  opacity: 1;
 }
